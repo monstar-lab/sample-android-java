@@ -23,20 +23,20 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
-#      - restore_cache:
-#          key: gems-{{ checksum "Gemfile.lock" }}
-#      - run: bundle install --path vendor/bundle
-#      - save_cache:
-#          paths:
-#            - vendor/bundle
-#          key: gems-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+          key: gems-{{ checksum "Gemfile.lock" }}
+      - run: bundle install --path vendor/bundle
+      - save_cache:
+          paths:
+            - vendor/bundle
+          key: gems-{{ checksum "Gemfile.lock" }}
 
       - run:
           name: Check lint
           command: ./gradlew :app:check -x test
-#      - run:
-#          name: Run danger
-#          command: bundle exec danger
+      - run:
+          name: Run danger
+          command: bundle exec danger
 
       - run:
           name: Build apk
