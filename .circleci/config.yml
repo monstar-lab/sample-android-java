@@ -19,23 +19,25 @@ jobs:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
       - restore_cache:
           key: gems-{{ checksum "Gemfile.lock" }}
-      - run: bundle install --path vendor/bundle
+      - run:
+          name: Install RubyGems
+          command: bundle install --path vendor/bundle
       - save_cache:
+          key: gems-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-          key: gems-{{ checksum "Gemfile.lock" }}
 
       - run:
-          name: Check lint
-          command: ./gradlew :app:check -x test
+          name: Lint / Test
+          command: ./gradlew :app:check
       - run:
-          name: Run danger
+          name: Run Danger
           command: bundle exec danger
 
       - run:
