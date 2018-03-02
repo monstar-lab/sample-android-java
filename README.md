@@ -2,9 +2,21 @@
 
 [![CircleCI](https://circleci.com/gh/noboru-i/sample-android-java.svg?style=svg)](https://circleci.com/gh/noboru-i/sample-android-java)
 
-This is sample project for Android (Java).
+This is the sample continuous integrated project for Android (Java).
 
-## Setup
+## What is this repository?
+
+- **Lint**: Configured lint setting with [monstar-lab/gradle-android-ci-check](https://github.com/monstar-lab/gradle-android-ci-check).
+  - **CheckStyle**
+  - **Findbugs**
+  - **PMD/PMD-CPD**
+  - **Android Lint**
+- **Build**: Configured build setting. e.g. `signingConfigs`, `buildTypes`
+- **CircleCI**: Lint, Test, and Build in [CircleCI](https://circleci.com/).
+- **PR Comment by Danger**: [Danger](http://danger.systems/ruby/) configuration is included. Lint error comes as PR comment.
+
+
+## How to setup
 
 1. Setup CircleCI build.
     - Turn "On" "Only build pull requests".
@@ -21,3 +33,12 @@ This is sample project for Android (Java).
     - `ANDROID_KEYSTORE_PASSWORD` : password for release keystore
     - `ANDROID_KEYSTORE_ALIAS` : alias for release keystore
     - `ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD` : alias's password for release keystore
+
+## Customize
+
+This repository is targeting for very simple project.
+
+But in real world, we need to work for complex project.
+
+We have some advice for customizing configuration in [Wiki](https://github.com/noboru-i/sample-android-java/wiki).
+Please refer to it.
