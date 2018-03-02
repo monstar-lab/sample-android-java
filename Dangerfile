@@ -29,7 +29,7 @@ require 'pmd_translate_checkstyle_format'
 pmd_cpd_xml = ::PmdTranslateCheckstyleFormat::Script.translate_cpd(File.read('app/build/reports/pmd/cpd.xml'))
 checkstyle_format.report_by_text pmd_cpd_xml
 
-# # Android Lint
+# Android Lint
 require 'android_lint_translate_checkstyle_format'
 android_lint_xml = ::AndroidLintTranslateCheckstyleFormat::Script.translate(File.read('app/build/reports/lint-results.xml'))
 checkstyle_format.report_by_text android_lint_xml
