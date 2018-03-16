@@ -1,6 +1,6 @@
 # Sample for Android (Java)
 
-[![CircleCI](https://circleci.com/gh/noboru-i/sample-android-java.svg?style=svg)](https://circleci.com/gh/noboru-i/sample-android-java)
+[![CircleCI](https://circleci.com/gh/monstar-lab/sample-android-java.svg?style=svg)](https://circleci.com/gh/monstar-lab/sample-android-java)
 
 This is the sample continuous integrated project for Android (Java).
 
@@ -20,7 +20,7 @@ This is the sample continuous integrated project for Android (Java).
 
 1. Setup CircleCI build.
     - Turn "On" "Only build pull requests".
-2. Copy or refer to below files. [diff](https://github.com/noboru-i/sample-android-java/compare/ebfaaf24a68981a81e02be24a1f71bbfde0bf0e4...master)
+2. Copy or refer to below files. [diff](https://github.com/monstar-lab/sample-android-java/compare/ebfaaf24a68981a81e02be24a1f71bbfde0bf0e4...master)
     - `.circleci/config.yml`
     - `Dangerfile`
     - `Gemfile`
@@ -40,5 +40,5 @@ This repository is targeting for very simple project.
 
 But in real world, we need to work for complex project.
 
-We have some advice for customizing configuration in [Wiki](https://github.com/noboru-i/sample-android-java/wiki).
+We have some advice for customizing configuration in [Wiki](https://github.com/monstar-lab/sample-android-java/wiki).
 Please refer to it.
